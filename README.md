@@ -90,7 +90,7 @@ qml-soc-25/
 ├── grover_algo.py                         # Grover's search
 ├── phase_estimation.py                    # Phase estimation circuit
 ├── quantum_fourier.py                     # Manual QFT
-├── quantum_teleportation.py               # Full teleportation protocol
+├── quantum_teleportation.py               # Example of quantum teleportation showing how a qubit’s state is transferred
 ├── README.md                              # This file
 
 
