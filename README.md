@@ -1,102 +1,96 @@
 # 💻 Quantum Computing with Qiskit – Summer of Code 2025
 
-*By Nikhila Pothamsetty*
+*By Nikhila Pothamsetty*  
 **GitHub Repo**: [qml-soc-25](https://github.com/nikhila2007-ux/qml-soc-25)
 
 This repository documents my learning journey through foundational quantum computing algorithms, simulations, and circuit implementations using **Qiskit**, as part of the **Summer of Code 2025**. Over the past few weeks, I’ve explored key quantum computing concepts by writing and simulating quantum circuits, building both theoretical understanding and practical skills in quantum programming.
+
+---
 
 ## 🌱 What I’ve Learned
 
 ### 🧠 1. **Qubit Superposition**
 
-* **Files**: `superposition_1q.py`, `superposition_2q.py`
-* I began with single- and two-qubit circuits applying Hadamard gates to create **quantum superpositions**.
-* Observed how qubits, unlike classical bits, can exist in a **combination of 0 and 1**, resulting in probabilistic outcomes.
-* Learned about **measurement collapsing** the state, and how results reflect the underlying quantum state vector.
+**Files**: `first working quantum circuit.py`, `2_qubit_superposition.py`
 
-### 🔍 2. **Grover’s Search Algorithm**
-
-* **File**: `grover_algo.py`
-* Built a two-qubit version of **Grover’s Algorithm** to find a marked item using fewer steps than classical search.
-* Designed a simple **oracle** and implemented **inversion about the mean**, which amplifies the target state’s probability.
-* Gained a practical understanding of **amplitude amplification** and its advantage in unstructured search problems.
-
-### 🤖 3. **Deutsch–Jozsa Algorithm** (2 Implementations)
-
-* **Files**: `deutsch_jozsa.py`, `deutsch_jozsa_random_oracle.py`
-* Learned how quantum algorithms can provide **exponential speedup** over classical ones for specific problems.
-* Implemented both:
-
-  * A **static oracle version** using `cz` gate (manually built for a balanced function).
-  * A **dynamic oracle generator** that simulates constant/balanced oracles using binary patterns and controlled gates.
-* Understood how **entanglement and interference** are leveraged to eliminate multiple possibilities in a single shot.
-
-### ⏳ 4. **Phase Estimation Algorithm**
-
-* **File**: `phase_estimation.py`
-* Explored the **quantum phase estimation algorithm**, a key building block in Shor’s algorithm and quantum simulations.
-* Learned how to construct **controlled-unitary operations**, apply **inverse QFT**, and interpret measured output as an estimate of a phase (eigenvalue).
-* This deepened my understanding of the role of **eigenstates**, **unitary operators**, and their phase relationships in quantum systems.
-
-### 🎵 5. **Quantum Fourier Transform (QFT)**
-
-* **File**: `quantum_fourier.py`
-* Manually implemented the **QFT** on a 3-qubit register, including Hadamard, controlled-phase gates, and qubit swaps.
-* Understood the mathematical transformation from time domain to frequency domain in the quantum sense.
-* QFT is essential for many algorithms like Shor’s factoring and solving systems of linear equations in quantum computing.
-
-### 📡 6. **Quantum Teleportation Protocol**
-
-* **File**: `quantum_teleportation.py`
-* Created a complete **quantum teleportation circuit** where an unknown quantum state is transferred from one qubit to another without physically moving the qubit itself.
-* Built **entangled Bell pairs**, performed **Bell basis measurement**, and applied **conditional corrections** based on classical bits.
-* Reinforced concepts of **entanglement**, **quantum information transfer**, and **hybrid classical-quantum control**.
+- Started with 1- and 2-qubit circuits using **Hadamard gates** to generate **quantum superpositions**.
+- Observed probabilistic outcomes that demonstrate the **non-deterministic nature** of qubit states.
+- Learned about **measurement collapse**, **circuit basics**, and how quantum data flows.
 
 ---
 
-## 🛠 Technologies Used
+### 🧩 2. **Bell State and Entanglement**
 
-* 🧪 **Qiskit** – IBM's quantum computing SDK for building and simulating circuits
-* 🐍 **Python** – Language used to script and run simulations
-* 🖥 **QASM Simulator (Aer)** – Used to simulate quantum circuits on classical machines
-* 📄 **Jupyter Notebooks / `.py` Scripts** – Code organization and testing
+**File**: `bell_state.py`
+
+- Built a **Bell state** (|Φ⁺⟩) using `H` and `CX` gates.
+- Understood **quantum entanglement** — how measurement of one qubit affects the other instantly.
+- Visualized using **histograms** to confirm correlated outcomes like `00` and `11`.
 
 ---
 
-## 📁 Folder Structure (Recommended)
+### 🔍 3. **Grover’s Search Algorithm**
 
-```
+**File**: `grover_algo.py`
+
+- Implemented a basic **Grover’s Algorithm** on 2 qubits to find a marked item.
+- Used a simple **oracle** (`CZ` gate) and performed **inversion about the mean**.
+- Observed how **amplitude amplification** improves search efficiency vs classical.
+
+---
+
+### ⚡ 4. **Deutsch–Jozsa Algorithm**
+
+**File**: `deutsch_jozsa.py`
+
+- Implemented a 2-qubit version of the **Deutsch–Jozsa Algorithm**.
+- Used it to distinguish between **constant** and **balanced** functions in one quantum query.
+- Learned how **interference and entanglement** eliminate possibilities before measurement.
+
+---
+
+### ⏳ 5. **Phase Estimation Algorithm**
+
+**File**: `phase_estimation.py`
+
+- Simulated the **Quantum Phase Estimation (QPE)** algorithm.
+- Built circuits using **controlled unitary gates**, **Hadamards**, and **inverse QFT**.
+- Estimated the phase (eigenvalue) of a known unitary and connected it with **Fourier analysis**.
+
+---
+
+### 🎵 6. **Quantum Fourier Transform (QFT)**
+
+**File**: `quantum_fourier.py`
+
+- Manually coded the **QFT** using Hadamards, controlled-phase gates, and swaps.
+- Demonstrated how QFT transforms amplitudes from time to frequency domain.
+- Deepened understanding of **interference** and **quantum parallelism**.
+
+---
+
+### 📡 7. **Quantum Teleportation Protocol**
+
+**File**: `quantum_teleportation.py`
+
+- Built a full **quantum teleportation** circuit transferring an unknown qubit state.
+- Used **Bell state entanglement**, **Bell basis measurements**, and **classical correction**.
+- Reinforced the concept of **quantum information transfer without physical movement**.
+
+---
+
+## 📁 Folder Structure
+
+```plaintext
 qml-soc-25/
-├── bell_state.py                      # Bell pair preparation
-├── deutsch_jozsa.py                   # Static oracle
-├── deutsch_jozsa_random_oracle.py     # Dynamic oracle with randomness
-├── grover_algo.py                     # Grover's search circuit
-├── phase_estimation.py                # Phase estimation circuit
-├── quantum_fourier.py                 # Manual QFT
-├── quantum_teleportation.py           # Full teleportation protocol
-├── superposition_1q.py                # 1-qubit superposition
-├── superposition_2q.py                # 2-qubit Hadamard superposition
-├── README.md                          # This file
-```
+├── first working quantum circuit.py        # 1-qubit superposition
+├── 2_qubit_superposition.py               # 2-qubit superposition
+├── bell_state.py                          # Bell state entanglement
+├── deutsch_jozsa.py                       # Deutsch–Jozsa algorithm
+├── grover_algo.py                         # Grover's search
+├── phase_estimation.py                    # Phase estimation circuit
+├── quantum_fourier.py                     # Manual QFT
+├── quantum_teleportation.py               # Full teleportation protocol
+├── README.md                              # This file
 
----
-
-## 📌 Key Takeaways
-
-* Quantum computing is **non-intuitive**, but hands-on simulation with Qiskit made it accessible.
-* Writing and testing quantum circuits helped me **internalize abstract math concepts** like tensor products, eigenvalues, interference, and unitary operations.
-* I've gained a **strong foundation** in core quantum algorithms that will help me explore advanced topics like:
-
-  * Shor’s algorithm
-  * Variational Quantum Eigensolvers (VQE)
-  * Quantum Machine Learning (QML)
-  * Hybrid quantum-classical circuits
-
----
-
-## ✨ Next Steps
-
-* Explore **IBM Quantum Lab** to run circuits on real quantum hardware.
-* Learn about **quantum error correction** and noise models.
-* Dive into **QML (Quantum Machine Learning)** using `qiskit-machine-learning`.
 
