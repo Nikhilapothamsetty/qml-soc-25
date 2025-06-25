@@ -92,9 +92,3 @@ qml-soc-25/
 ├── quantum_fourier.py                     # Manual QFT
 ├── quantum_teleportation.py               # Example of quantum teleportation showing how a qubit’s state is transferred
 ├── README.md                              # This file
-🛠 Technologies Used
-🧪 Qiskit – IBM's quantum computing SDK for building and simulating circuits
-🐍 Python – Language used to script and run simulations
-🖥 QASM Simulator (Aer) – Used to simulate quantum circuits on classical machines
-📄 Jupyter Notebooks / .py Scripts – Code organization and testing
-
