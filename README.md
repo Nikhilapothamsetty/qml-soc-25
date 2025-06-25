@@ -78,6 +78,12 @@ This repository documents my learning journey through foundational quantum compu
 - Reinforced the concept of **quantum information transfer without physical movement**.
 
 ---
+## 🛠 Technologies Used
+
+* 🧪 **Qiskit** – IBM's quantum computing SDK for building and simulating circuits
+* 🐍 **Python** – Language used to script and run simulations
+* 🖥 **QASM Simulator (Aer)** – Used to simulate quantum circuits on classical machines
+* 📄 **Jupyter Notebooks / `.py` Scripts** – Code organization and testing
 
 ## 📁 Folder Structure
 
